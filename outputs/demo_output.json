@@ -1,0 +1,5 @@
+{
+  "status": "not_run",
+  "reason": "No model endpoint or Python runtime was available; no ticket-level response is claimed.",
+  "sample_text_included": false
+}

@@ -1,0 +1,1 @@
+No portal screenshot file was exported: the connected Chrome control exposed live accessibility/screenshot views but not a save-to-workspace API. No screenshot was fabricated. See `docs/01_azure_environment_assessment.md` for verified observations.

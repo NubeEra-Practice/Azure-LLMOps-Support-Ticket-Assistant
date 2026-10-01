@@ -1,0 +1,18 @@
+{
+  "status": "offline_baseline_completed",
+  "source_dataset": "Azure blob: rg-nginx/sanginx001/data/azure_llmops_support_tickets.csv",
+  "evaluation_scope": "all 12,000 labeled source rows; diagnostic only, not an independent holdout",
+  "rows_evaluated": 12000,
+  "execution_note": "Aggregates were calculated with a local Node.js parity harness that mirrors the deterministic rules in src/llm_client.py. Python/FastAPI were unavailable, so the Python evaluator and API were not run.",
+  "model_name": "offline-rules-v1",
+  "is_llm_result": false,
+  "category": {"accuracy": 0.67625, "weighted_precision": 0.7349649482572272, "weighted_recall": 0.67625, "weighted_f1": 0.6848797975472264},
+  "priority": {"accuracy": 0.4861666666666667, "weighted_precision": 0.32577961565872054, "weighted_recall": 0.4861666666666667, "weighted_f1": 0.35265020861319746},
+  "api_json_validity_rate": null,
+  "api_latency_ms": null,
+  "token_usage": {"prompt_tokens": 0, "completion_tokens": 0},
+  "estimated_inference_cost_usd": 0.0,
+  "resolution_label_missing_rows": 4164,
+  "privacy_note": "The source CSV and ticket free text are not included in this ZIP. No ticket-level content was printed by the evaluation harness.",
+  "limitations": ["These are rule-baseline diagnostics, not LLM performance metrics.", "The full source rows were used, not a holdout; this is not a production generalization estimate.", "API response validation, latency, Docker, and model/token costs were not measured."]
+}

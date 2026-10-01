@@ -1,0 +1,27 @@
+name: llmops-ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - run: python -m compileall -q src evaluation tests
+      - run: pytest -q
+      - run: docker build -t ticket-assistant:ci .
+
+# Deployment is intentionally omitted. Add a manual, protected workflow only after
+# cost estimates, environment approval, and repository secrets are configured.
